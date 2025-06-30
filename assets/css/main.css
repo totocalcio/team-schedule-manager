@@ -1,0 +1,81 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-blue-50 via-white to-green-50 min-h-screen;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-xl;
+  }
+  
+  .glass-dark {
+    @apply bg-gray-900/80 backdrop-blur-sm border border-gray-700/20 shadow-xl;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 cursor-pointer;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-600 hover:to-secondary-700 text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 cursor-pointer;
+  }
+  
+  .btn-ghost {
+    @apply bg-white/60 hover:bg-white/80 text-gray-700 font-medium px-4 py-2 rounded-lg transition-all duration-200 border border-gray-200/50 hover:border-gray-300/50 cursor-pointer;
+  }
+  
+  .btn-primary:disabled,
+  .btn-secondary:disabled,
+  .btn-ghost:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+  
+  .btn-primary:disabled:hover,
+  .btn-secondary:disabled:hover,
+  .btn-ghost:disabled:hover {
+    @apply transform-none shadow-lg;
+  }
+  
+  .btn-primary:disabled,
+  .btn-secondary:disabled,
+  .btn-ghost:disabled {
+    @apply opacity-50 cursor-not-allowed transform-none hover:shadow-lg;
+  }
+  
+  .status-available {
+    @apply bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600;
+  }
+  
+  .status-maybe {
+    @apply bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600;
+  }
+  
+  .status-unavailable {
+    @apply bg-gradient-to-r from-red-400 to-red-500 hover:from-red-500 hover:to-red-600;
+  }
+  
+  .card {
+    @apply glass rounded-xl p-6 hover:shadow-2xl transition-all duration-300;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-gray-200 bg-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent;
+  }
+}
